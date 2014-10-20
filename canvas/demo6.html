@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+	#c{
+		border:1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+<canvas id="c" width="400" height="400"></canvas>
+
+<script type="text/javascript">
+	var c=document.getElementById("c");
+	var pen=c.getContext("2d");
+	pen.fillStyle="red";
+	
+	var i=0;
+	var range=5;
+	var count=parseInt(c.height)/range-1;
+	var timer=setInterval(function(){
+		pen.clearRect((i-1)*range,(i-1)*range,10,10);
+		pen.fillRect(i*range,i*range,10,10);
+		i++;
+		if(i==count){
+			clearInterval(timer);
+			//document.title="停止运动了。放心吧，没问题"
+		}
+		
+	},30);
+	
+	
+	
+</script>
+</body>
+</html>

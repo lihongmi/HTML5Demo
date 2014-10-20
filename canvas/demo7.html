@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+	#c{
+		border:1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+<canvas id="c" width="400" height="400"></canvas>
+
+<script type="text/javascript">
+	var c=document.getElementById("c");
+
+	var pen=c.getContext("2d");
+	c.onmousedown=function(e){
+		var oe=window.event||e;
+		var x=oe.clientX-parseInt(c.offsetLeft),y=oe.clientY-parseInt(c.offsetTop);
+		pen.moveTo(x,y);
+			c.onmousemove=function(e){
+			var oe=window.event||e;
+			var x=oe.clientX-parseInt(c.offsetLeft),y=oe.clientY-parseInt(c.offsetTop);
+			pen.lineTo(x,y);
+			pen.stroke();
+		}
+	}
+	c.onmouseup=function(){
+		c.onmousemove=null;
+	}
+	
+	
+</script>
+</body>
+</html>

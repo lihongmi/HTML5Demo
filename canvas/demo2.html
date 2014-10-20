@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+	#c{
+		border:1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<script type="text/javascript">
+	var c=document.getElementById("c");
+	var pen=c.getContext("2d");
+	pen.strokeStyle="red";
+	
+	pen.beginPath();
+	pen.arc(150,75,75,Math.PI,Math.PI/2,true)
+	pen.stroke();
+	pen.closePath();
+	
+</script>
+</body>
+</html>

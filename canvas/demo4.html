@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+	#c{
+		border:1px solid #ccc;
+	}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<script type="text/javascript">
+	var c=document.getElementById("c");
+	var pen=c.getContext("2d");
+	
+	pen.strokeStyle="red";
+	pen.lineWidth=5;
+
+	pen.beginPath();
+	pen.moveTo(30,75);
+	pen.lineTo(100,75);
+	pen.lineTo(100,100);
+
+	pen.stroke();
+	
+	
+	pen.stroke();
+	pen.closePath();
+	pen.fillStyle="yellow";
+	pen.fillRect(30,75,100,50);
+</script>
+</body>
+</html>
